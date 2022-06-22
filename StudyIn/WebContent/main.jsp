@@ -18,6 +18,7 @@
 </head>
 <body style="background-color:#E9E9E9">
 	<%-- header --%>
+	<h1 class="text-center pt-4" style="font-weight:900">StudyIn</h1>
 	<jsp:include page="container/header.jsp"/>
 	
 	<%-- nav --%>
