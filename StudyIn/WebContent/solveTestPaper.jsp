@@ -31,11 +31,12 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	ArrayList<QuestionDTO> ret = null;
+	int exam_id = 0;
 	String auth = (String) session.getAttribute("Authorization");
 	if (auth != null) {
 		// API 연결
 		HttpUtil ht = new HttpUtil();
-		int exam_id = ht.myPaperInfo(auth);
+		exam_id = ht.myPaperInfo(auth);
 		if (exam_id != -1) {
 			ret = ht.getTestPaper(auth, exam_id);
 			System.out.println(ret.toString());
@@ -58,8 +59,9 @@
 			<p class="fs-5 fw-bold mb-5">3. 문제가 랜덤으로 섞인 시험지를 다운로드 하시오</p>
             <div class="text-center">
                 <div class="btn-group" style ="width:80%">
-                    <button type="button" class=" w-100 py-2 border border-dark bg-white file-name" disabled style="color:#000; font-size: 25px;"></button>
-                    <button type="button" class=" w-50 py-2 border border-dark bg-white fw-bold" style="font-size:28px; ">시험지 다운로드</button>
+                	<form action="./questionPdf.jsp?id=<%= exam_id %>" method="post" name="loginForm">
+	                    <button type="submit" class="btn btn-light btn-outline-dark" style="font-size:28px;">시험지 다운로드(pdf)</button>
+                    </form>
                 </div>
             </div>
 		</div>

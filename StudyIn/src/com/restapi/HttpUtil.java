@@ -198,4 +198,34 @@ public class HttpUtil {
 		list.add(new QuestionDTO("fail","fail"));
 		return list;
 	}
+	
+	// 시험지 제목
+	public String getTestPaperTitle(String token, int exam_id) {
+		try {
+			String str = "http://49.50.162.19:8000/api/exam/"+ exam_id;
+			URL url = new URL(str);
+			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+			
+			conn.setRequestMethod("GET"); // http 메서드
+			conn.setRequestProperty("Authorization", token);
+			conn.setDoOutput(true); // 서버로부터 받는 값이 있다면 true
+
+	        // 서버로부터 데이터 읽어오기
+	        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			
+			while((line = br.readLine()) != null) { // 읽을 수 있을 때 까지 반복
+				sb.append(line);
+			}
+			
+			JSONObject obj = new JSONObject(sb.toString()); // json으로 변경 (역직렬화)
+			System.out.println(obj.getString("title"));
+			
+			return obj.getString("title");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "fail";
+	}
 }
