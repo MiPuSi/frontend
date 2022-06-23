@@ -12,7 +12,7 @@
                         <input type="text" id="password" name="password">
                     </div>
                     <div class="join-button-group">
-                        <div class="a">
+                        <div class="a b">
                             <input type="submit" class="button login-button" value="로그인"/>
                             <button type="button" class="button">취소</button>
                         </div>
@@ -21,3 +21,5 @@
             </div>
         </div>
     </section>
+    
+ 
