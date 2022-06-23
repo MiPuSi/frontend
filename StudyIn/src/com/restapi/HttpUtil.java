@@ -38,7 +38,7 @@ public class HttpUtil {
 			
 			
 			// 서버로부터 데이터 읽어오기
-			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
 			StringBuilder sb = new StringBuilder();
 			String line = null;
 			
@@ -50,11 +50,38 @@ public class HttpUtil {
 			//System.out.println("token= " + obj2.getString("token"));
 			System.out.println("token = " + sb.toString());
 			return obj2.getString("token");
-			//return sb.toString();
-			//return "success";
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return "fail";
-	}	
+	}
+	
+	public String memberInfo(String token) {
+		try {
+			String str = "http://49.50.162.19:8000/api/home";
+			URL url = new URL(str);
+			HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+			
+			conn.setRequestMethod("GET"); // http 메서드
+			conn.setRequestProperty("Authorization", token);
+			conn.setDoOutput(true); // 서버로부터 받는 값이 있다면 true
+
+			// 상태 코드
+	        int responseCode = conn.getResponseCode();
+	        //System.out.println(responseCode);
+
+	        // 서버로부터 데이터 읽어오기
+	        BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+			StringBuilder sb = new StringBuilder();
+			String line = null;
+			
+			while((line = br.readLine()) != null) { // 읽을 수 있을 때 까지 반복
+				sb.append(line);
+			}
+			return sb.toString();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "fail";
+	}
 }

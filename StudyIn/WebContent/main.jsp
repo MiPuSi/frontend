@@ -22,14 +22,14 @@
 	<jsp:include page="container/header.jsp"/>
 	
 	<%-- nav --%>
-	<jsp:include page="container/nav.jsp"/>
+	<%@ include file="container/nav.jsp" %>
 
 	<%-- main --%>
 	<div class="container text-center">
 		<%-- 명언 타임 --%>
 		<div class="my-5">
 			<div class="text-center">
-				<p class="m-0 py-4 border border-dark bg-white fs-6">배우고 때때로 이를 익히면 또한 기쁘지 아니한가 (學而時習之 不亦說乎) - 공자</p>
+				<p class="m-0 py-4 px-2 border border-dark bg-white fs-6"><%= str4 %> <%= str5 %></p>
 			</div>
 		</div>
 

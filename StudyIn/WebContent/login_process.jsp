@@ -13,10 +13,9 @@
 	// 결과
 	if (ret != "fail") {
 		String param = URLEncoder.encode(ret, "utf-8");	
-		session.setAttribute("Authorization", ret);
+		session.setAttribute("Authorization", param);
 		response.sendRedirect("./main.jsp");
 	} else {
 		response.sendRedirect("./login.jsp?error=1");
 	}
-	System.out.println(ret);	
 %>
