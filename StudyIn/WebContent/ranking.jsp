@@ -10,13 +10,7 @@
 <body style="background-color:#E9E9E9">
 	<%-- header --%>
 	<h1 class="text-center pt-4" style="font-weight:900">StudyIn</h1>
-	<header>
-        <div id="justify-content" class="container my-2">
-            <div class="row justify-content-end">
-                <a href="#" type="button" class="btn btn-outline-secondary col-1 px-0 m-1">퇴실하기</a>
-            </div>
-        </div>
-    </header>
+	<jsp:include page="container/header.jsp"/>
 	
 	<%-- nav --%>
 	<jsp:include page="container/nav.jsp"/>
@@ -24,7 +18,7 @@
 	<%-- main --%>
 	<div class="container" style="margin-bottom: 5%;">
 		<div class="my-4" style="max-width:1200px; min-width:600px;">
-            <p class="fs-5  my-5">1. 현재 StudyIn의 시험지 랭킹은 다음과 같습니다.</p>
+            <p class="fs-5 fw-bold my-5">1. 현재 StudyIn의 시험지 랭킹은 다음과 같습니다.</p>
         </div>
 
         <div class="ranking row justify-content-center">

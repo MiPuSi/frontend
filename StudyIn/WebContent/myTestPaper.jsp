@@ -10,13 +10,7 @@
 <body style="background-color:#E9E9E9">
 	<%-- header --%>
 	<h1 class="text-center pt-4" style="font-weight:900">My 시험지</h1>
-	<header>
-        <div id="justify-content" class="container my-2">
-            <div class="row justify-content-end">
-                <a href="#" type="button" class="btn btn-outline-secondary col-1 px-0 m-1">퇴실하기</a>
-            </div>
-        </div>
-    </header>
+	<jsp:include page="container/header.jsp"/>
 	
 	<%-- nav --%>
 	<jsp:include page="container/nav.jsp"/>
@@ -25,10 +19,10 @@
 	<div class="container" style="margin-bottom: 5%;">
         <div class="row my-4" >
             <div class="col-6 px-4" style="display:flex; justify-content: flex-end;">
-                <a href="#" class="fs-4 px-2 py-2 bg-white border border-dark">My 시험지</a>
+                <a href="#" class="fs-4 px-2 py-2 btn btn-light btn-outline-dark">My 시험지</a>
             </div>
             <div class="col-6 px-4" style="display:flex; justify-content: flex-start;" >
-                <a href="#" class="fs-4 px-2 py-2 bg-white border border-dark">관심 시험지</a>
+                <a href="#" class="fs-4 px-2 py-2 btn btn-light btn-outline-dark">관심 시험지</a>
             </div>
         </div>
 

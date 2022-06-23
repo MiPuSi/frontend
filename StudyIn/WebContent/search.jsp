@@ -10,13 +10,7 @@
 <body style="background-color:#E9E9E9">
 	<%-- header --%>
 	<h1 class="text-center pt-4" style="font-weight:900">시험지 검색</h1>
-	<header>
-        <div id="justify-content" class="container my-2">
-            <div class="row justify-content-end">
-                <a href="#" type="button" class="btn btn-outline-secondary col-1 px-0 m-1">퇴실하기</a>
-            </div>
-        </div>
-    </header>
+	<jsp:include page="container/header.jsp"/>
 	
 	<%-- nav --%>
 	<jsp:include page="container/nav.jsp"/>
