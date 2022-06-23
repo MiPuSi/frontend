@@ -22,3 +22,56 @@
 	<jsp:include page="container/footer.jsp"/>
 </body>
 </html>
+
+<script type="text/javascript">
+    function checkDuplicateId() {          
+        // parameter
+        var id = document.querySelector('#email').value;
+        const form = document.querySelector('.form');
+
+        //validation check
+        if (id.length == 0) {
+            flag=false;
+            alert("아이디를 입력해주세요.");
+            document.querySelector('#email').focus();
+            return false;                
+        }
+        
+        var regId = /^[a-z]+[a-z0-9]{5,11}$/;
+        if (!regId.test(id)){
+            flag=false;
+            alert("아이디는 영문자로 시작하는 6~12자 영문자와 숫자이어야 합니다.");
+            document.querySelector('#email').focus();
+            return false;
+        }
+
+        flag=true;
+    }
+
+    function checkPasswd() {
+        var passwd = document.querySelector('#password').value;
+
+        if (passwd.length == 0 && flag) {
+            alert("비밀번호를 입력해주세요.");
+            return false;
+        }
+        
+        var regPasswd = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,12}$/;
+        
+        if (!regPasswd.test(passwd) &&flag) {
+            alert('비밀번호는 영문자와 숫자가 각각 적어도 하나는 들어간 6~12자 영문자 또는 숫자이어야 합니다.');
+            return false;
+        }
+      
+        
+    }
+    var flag=true;
+    const login_button = document.querySelector('.login-button');
+    login_button.addEventListener('click',function(e){
+
+        checkDuplicateId();
+        checkPasswd();
+
+    })
+
+</script>

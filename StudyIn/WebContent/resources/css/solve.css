@@ -1,0 +1,59 @@
+a{
+    color: inherit;
+  text-decoration: none;
+}
+
+.problems{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.direction{
+
+    width:40px;
+    height:40px;
+    font-size: 32px;
+    border:1px
+    
+}
+
+.previous{
+    padding:4px 2px;
+    background-color: #fff;
+    transform-origin: 0% 0%;
+    transform: rotate(90deg);
+    border: 1px solid #000;
+
+    position: absolute;
+    left: 90%;
+    
+
+}
+.next{
+    padding:4px 2px;
+    background-color: #fff;
+    transform-origin: 0% 0%;
+    transform: rotate(-90deg) ;
+    border: 1px solid #000;
+
+    position: absolute;
+    top: 100%;
+    left: 10%;
+}
+
+.a{
+    width:100%;
+    height: 100%;;
+    display:block;
+    position: relative;
+}
+
+
+.problem{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
