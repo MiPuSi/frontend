@@ -48,7 +48,7 @@
 	<%-- main --%>
 	<div class="container">
 		<div class="m-5">
-			<form class="form-signin" name="paperForm" action="http://localhost:8000/api/exam/upload" method="post" enctype="multipart/form-data">
+			<form class="form-signin" name="paperForm" action="./makeTestPaper_process.jsp" method="post" enctype="multipart/form-data">
 				<div class="row">
 					<%-- chap 1 --%>
 					<div>
